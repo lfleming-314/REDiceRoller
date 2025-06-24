@@ -100,9 +100,9 @@
 			$('#thirddie').empty();
 			dieResult = getRandomIntInclusive(1,6);
 			if (dieResult <= 5) {
-				$('#firstdie').append("<img src='all clear.png'/>");
+				$('#firstdie').append("<div class='container' style='position: relative; text-align: center;'><img src='all clear.png'/><div style='position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%)'>" + dieResult + "</div></div>");
 			} else {
-				$('#firstdie').append("<img src='zombie symbol.jpg'/>");
+				$('#firstdie').append("<div class='container' style='position: relative; text-align: center;'><img src='zombie symbol.jpg'/></div>");
 			}
 		}
 		
