@@ -10,8 +10,8 @@
 		<button type='button' id='roll1' onclick='roll1()'>1</button>
 		<button type='button' id='roll2' onclick='roll2()'>2</button>
 		<button type='button' id='roll3' onclick='roll3()'>3</button>
-		<button type='button' id='zombie' onclick='rollZombie()' style="background-color: black;">Zombie</button>
-		<button type='button' id='clear' onclick='clearall()' style="margin-left: 10vw; background-color: #332B1E;">Clear</button>
+		<button type='button' id='zombie' onclick='rollZombie()'>Zombie</button>
+		<button type='button' id='clear' onclick='clearall()'>Clear</button>
 	</div>
 	<div id='displaydicehere'>
 		<div id='firstdie' class='dicediv'></div>
@@ -32,12 +32,21 @@
 			font-family: typewriter, serif; 
 			padding-left: 3vw; 
 			padding-right: 3vw; 
-			padding-top: 1vw; 
+			padding-top: 1vw;
 			padding-bottom: 1vw; 
 			border-style: solid;
 			border-color: black;
 			border-radius: 50%;
-			box-shadow: 0 0 10px black;}
+			box-shadow: 0 0 10px black;
+		}
+		
+		#zombie {background-color: black;}
+		
+		#clear { margin-left: 10vw; background-color: #332B1E;}
+		
+		button:active, #zombie:active, #clear:active {
+			background-color: yellow;
+		}
 		
 		#displaydicehere { "margin-left": "auto"; "margin-right": "auto";}
 		
@@ -100,9 +109,9 @@
 			$('#thirddie').empty();
 			dieResult = getRandomIntInclusive(1,6);
 			if (dieResult <= 5) {
-				$('#firstdie').append("<div class='container' style='position: relative; text-align: center;'><img src='all clear.png'/><div style='position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%)'>" + dieResult + "</div></div>");
+				$('#firstdie').append("<img src='all clear.png'/>");
 			} else {
-				$('#firstdie').append("<div class='container' style='position: relative; text-align: center;'><img src='zombie symbol.jpg'/></div>");
+				$('#firstdie').append("<img src='zombie symbol.jpg'/>");
 			}
 		}
 		
