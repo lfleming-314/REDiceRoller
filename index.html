@@ -59,12 +59,12 @@
 	<script>
 	
 		let imgAddresses = {};
-		imgAddresses[1] = "push symbol.png";
-		imgAddresses[2] = "damage symbol.png";
-		imgAddresses[3] = "small arrow symbol.png";
-		imgAddresses[4] = "dot arrow symbol.png";
-		imgAddresses[5] = "full arrow symbol.png";
-		imgAddresses[6] = "push symbol.png";
+		imgAddresses[1] = "img/push symbol.png";
+		imgAddresses[2] = "img/damage symbol.png";
+		imgAddresses[3] = "img/small arrow symbol.png";
+		imgAddresses[4] = "img/dot arrow symbol.png";
+		imgAddresses[5] = "img/full arrow symbol.png";
+		imgAddresses[6] = "img/push symbol.png";
 	
 		rollDie = function() {
 			dieResult = getRandomIntInclusive(1,6);
@@ -102,17 +102,23 @@
 			$('#seconddie').append(imgsrc2);
 			$('#thirddie').append(imgsrc3);
 		}
+
+		let zImgAddresses = {};
+		zImgAddresses[1] = "img/one.png";
+		zImgAddresses[2] = "img/two.png";
+		zImgAddresses[3] = "img/three.png";
+		zImgAddresses[4] = "img/four.png";
+		zImgAddresses[5] = "img/five.png";
+		zImgAddresses[6] = "img/zombie symbol.jpg";
 		
 		rollZombie = function() {
 			$('#firstdie').empty();
 			$('#seconddie').empty();
 			$('#thirddie').empty();
 			dieResult = getRandomIntInclusive(1,6);
-			if (dieResult <= 5) {
-				$('#firstdie').append("<img src='all clear.png'/>");
-			} else {
-				$('#firstdie').append("<img src='zombie symbol.jpg'/>");
-			}
+			img = zImgAddresses[dieResult];
+			htmlconstruct = "<img src='" + img + "'/>";
+			$('#firstdie').append(htmlconstruct);
 		}
 		
 		clearall = function() {
@@ -133,3 +139,4 @@
 	
 </body>
 </html>
+
